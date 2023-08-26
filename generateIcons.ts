@@ -26,7 +26,7 @@ const generateComponent = async (opts: { name: string; rawSvg: string }) => {
       ${svg}
   );
   `.trim();
-  index += `export * from "./icons/${opts.name}.tsx";`;
+  index += `export * from "./icons/${opts.name}.tsx";\n`;
   try {
     await Deno.mkdir("icons");
   } catch (_) {
@@ -79,4 +79,4 @@ for (const item of Object.values(Si)) {
   await generateComponent({ name, rawSvg: item.svg });
 }
 
-await Deno.writeTextFile("main.ts", index);
+await Deno.writeTextFile("lib/index.ts", index);

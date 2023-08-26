@@ -1,5 +1,5 @@
 {
   "tasks": {
-    "build": "deno run --allow-write=build,icons,main.ts --allow-run=git --allow-read=build,exec_path generateIcons.ts"
+    "build": "deno run --allow-write=build,icons,lib/index.ts --allow-run=git --allow-read=build generateIcons.ts"
   }
 }
